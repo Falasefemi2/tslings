@@ -343,6 +343,9 @@ async function watchCmd(): Promise<number> {
     printFailure(meta, EXERCISES.length, 0, result);
     return false;
   };
+  // Initial check, like gopherlings' --watch: show the current failure first.
+  const cur = await firstUnsolved();
+  if (cur) await checkOne(cur);
   await startWatch({
     checkOne,
     current: firstUnsolved,

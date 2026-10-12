@@ -4,6 +4,10 @@ import { projectRoot } from "./checker.ts";
 import type { ExerciseMeta } from "./manifest.ts";
 import { cyan, dim, green, red } from "./report.ts";
 
+export function exerciseRelPath(meta: ExerciseMeta): string {
+  return path.join("exercises", meta.dir, meta.file);
+}
+
 export interface WatchHandlers {
   /** Re-check one exercise; returns true when it passes. */
   checkOne: (meta: ExerciseMeta) => Promise<boolean>;
@@ -20,7 +24,7 @@ export async function startWatch(handlers: WatchHandlers): Promise<void> {
     console.log(green("All exercises pass. Nothing to watch!"));
     return;
   }
-  console.log(cyan(`Watching ${current.file} — save the file to re-check. Ctrl-C to exit.`));
+  console.log(cyan(`Watching ${exerciseRelPath(current)} — save the file to re-check. Ctrl-C to exit.`));
 
   let timer: ReturnType<typeof setTimeout> | undefined;
   let checking = false;
@@ -52,7 +56,7 @@ export async function startWatch(handlers: WatchHandlers): Promise<void> {
         current = next;
         watcher?.close();
         watcher = watchFile();
-        console.log(cyan(`Advanced to ${current.file} — watching it now.`));
+        console.log(cyan(`Advanced to ${exerciseRelPath(current)} — watching it now.`));
       }
     } finally {
       checking = false;
@@ -73,7 +77,7 @@ export async function startWatch(handlers: WatchHandlers): Promise<void> {
   try {
     watcher = watchFile();
   } catch (err) {
-    console.log(red(`Cannot watch ${current.file}: ${err instanceof Error ? err.message : String(err)}`));
+    console.log(red(`Cannot watch ${exerciseRelPath(current)}: ${err instanceof Error ? err.message : String(err)}`));
     return;
   }
 
