@@ -1,0 +1,5 @@
+node_modules/
+.tslings/state.json
+!.tslings/pristine/
+*.log
+.DS_Store
