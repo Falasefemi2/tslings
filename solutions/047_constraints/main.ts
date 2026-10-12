@@ -1,0 +1,7 @@
+function longest<T extends { length: number }>(a: T, b: T): T {
+  return a.length >= b.length ? a : b;
+}
+
+console.log(longest("ab", "abc").length);
+
+export {};
