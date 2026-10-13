@@ -6,7 +6,7 @@
 //
 // Can you find the problem? One call below passes no argument.
 
-function greet(name: string = ___): string {
+function greet(name: string = "world"): string {
   return `Hello, ${name}!`;
 }
 

@@ -7,7 +7,7 @@
 //
 // Can you find the problem? The annotations below are missing.
 
-function add(a: ___, b: ___): ___ {
+function add(a: number, b: number): number {
   return a + b;
 }
 

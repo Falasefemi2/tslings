@@ -6,7 +6,7 @@
 //
 // Can you find the problem? The rest parameter's element type is missing.
 
-function sum(...nums: ___): number {
+function sum(...nums: number[]): number {
   return nums.reduce((a, b) => a + b, 0);
 }
 

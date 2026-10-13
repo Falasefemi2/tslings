@@ -8,7 +8,7 @@
 // This is a `compile`-mode exercise: it passes when it type-checks cleanly.
 // There is nothing to run. Can you find the problem?
 
-const language: ___ = "TypeScript";
+const language: string = "TypeScript";
 const tooling: string = "tslings";
 
 console.log(`${tooling} teaches ${language}.`);

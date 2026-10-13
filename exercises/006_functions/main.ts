@@ -7,7 +7,7 @@
 //
 // Can you find the problem? Both halves of the annotation are missing.
 
-function square(n: ___): ___ {
+function square(n: number): number {
   return n * n;
 }
 

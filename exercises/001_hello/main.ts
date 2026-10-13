@@ -11,6 +11,6 @@
 // Can you find the problem? Fill in the ___ blank so the program prints
 // exactly: Hello, tslings!
 
-console.log(___);
+console.log("Hello, tslings!");
 
 export {};

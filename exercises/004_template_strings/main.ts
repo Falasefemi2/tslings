@@ -9,6 +9,6 @@
 
 const friendName = "Ferris";
 const friendAge = 5;
-console.log("Hello, " + ___ + "! You are " + ___ + " years old.");
+console.log(`Hello, ${friendName}! You are ${friendAge} years old.`);
 
 export {};

@@ -8,7 +8,7 @@
 // Can you find the problem? This counter is incremented below, so one
 // keyword has to change.
 
-___ counter = 10;
+let counter = 10;
 counter += 1;
 console.log(counter);
 
