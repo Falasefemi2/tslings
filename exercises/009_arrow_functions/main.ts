@@ -7,7 +7,7 @@
 //
 // Can you find the problem? The parameters have no types.
 
-const add = (a: ___, b: ___): number => a + b;
+const add = (a: number, b: number): number => a + b;
 
 console.log(add(3, 5));
 
